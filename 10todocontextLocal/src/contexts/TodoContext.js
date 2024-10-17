@@ -14,7 +14,6 @@ export const TodoContext = createContext({
     toggleComplete: (id) => {}
 })
 
-
 export const useTodo = () => {
     return useContext(TodoContext)
 }
