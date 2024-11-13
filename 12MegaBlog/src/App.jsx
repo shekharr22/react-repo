@@ -6,12 +6,9 @@ function App() {
 
   return (
     <>
-      <h1> max dev </h1>
+      <h1> max dev  </h1>
     </>
   )
 }
 
 export default App
-
-
-
