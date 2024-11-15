@@ -76,6 +76,8 @@ export class Service {
       return false;
     }
   }
+
+  async getPosts(queries = []){}
 }
 
 const service = new Service();
