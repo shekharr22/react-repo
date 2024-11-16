@@ -51,7 +51,7 @@ export class AuthService {
             console.log("Appwrite service :: getCurrentUser :: error", error);
         }
     }
-}
+}  
 
 const authService = new AuthService();
 
