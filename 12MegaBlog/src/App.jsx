@@ -5,6 +5,8 @@ import './App.css'
 import authService from "./appwrite/auth"
 import {login, logout} from "./store/authSlice"
 import { Outlet } from 'react-router-dom'
+import { Header } from './components'
+import { Footer } from './components'
 
 function App() {
  const [loading, setloading] = useState(true)
