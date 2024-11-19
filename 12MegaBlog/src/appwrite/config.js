@@ -27,7 +27,7 @@ export class Service {
                     userId
                 }
             );
-        } catch (error) {
+        } catch (error) {  
             console.log("Appwrite service :: createPost :: error", error);
         }
     }
