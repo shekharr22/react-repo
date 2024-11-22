@@ -6,7 +6,11 @@ const Input = React.forwardRef(function Input({
   className = "",
   ...props
 }, ref) {
-     return <h1>Test</h1>
+     return(
+      <div className='w-full'>
+        {label && <label className='block mb-1' htmlFor={props.id}>{label}</label>}
+      </div>
+     )
 });
 
 export default Input;
