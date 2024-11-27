@@ -17,13 +17,61 @@ function PostForm({ post }) {
     });
 
   const navigate = useNavigate();
-  const userData = useSelector(state => state.user.userData)
+  const userData = useSelector((state) => state.user.userData);
+
   const submit = async (data) => {
-    if(post) {
-        
+    if (post) {
+      data.image[0] ? appwriteService.uploadFile(data.image[0]) : null;
+
+      if (file) {
+        appwriteService.deleteFile(post.featuredImage);
+      }
+      const dbPost = await appwriteService.updatePost(post.$id, {
+        ...data,
+        featuredImage: file ? file.$id : undefined
+      });
+      if (dbPost) {
+        navigate(`/post${dbPost.$id}`);
+      }
+    } else {
+      const file = await appwriteService.uploadFile(data.image[0]);
+
+      if (file) {
+        const fileId = file.$id;
+        data.featuredImage = fileId;
+        const dbPost = await appwriteService.createPost({
+          ...data,
+          userId: userData.$id
+        });
+        if (dbPost) {
+          navigate(`/post${dbPost.$id}`);
+        }
+      }
     }
-  }
-   
+  };
+
+  const slugTransform = useCallback((value) => {
+    if (value && typeof value === "string") {
+      return value
+        .trim()
+        .toLowerCase()
+        .replace(/^[a-zA-z\d\s]+/g, "-")
+        .replace(/\s/g, "-");
+    }
+  }, [])
+
+  React.useEffect(() =>  {
+     const subscription = watch((value, {name}) => {
+      if (name === 'title'){
+        setValue('slug', slugTransform(value))
+      }
+     } )
+
+     return () => {
+      subscription.unsubscribe()
+     }
+  }, [watch, slugTransform, setValue])
+
   return <div>PostForm</div>;
 }
 
