@@ -7,7 +7,8 @@ import RTE from "./RTE";
 import Signup from "../../pages/Signup";
 import Login from "../../pages/Login";
 import Post from "./Post"
-
+import PostFrom from "./post-form/PostForm"
+import PostCard from "./PostCard";
 export { Header,
          Footer,
          Container,
@@ -16,6 +17,9 @@ export { Header,
          RTE,
          Signup,
          Login,
-         Post
+         Post,
+         PostFrom,
+         PostCard,
+
          
 };

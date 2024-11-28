@@ -120,4 +120,8 @@ function PostForm({ post }) {
         </div>
     </form>
 );
+
+
 }
+
+export default PostForm;
