@@ -9,6 +9,7 @@ import Login from "../../pages/Login";
 import Post from "./Post"
 import PostFrom from "./post-form/PostForm"
 import PostCard from "./PostCard";
+import AuthLayout from "./AuthLayout"
 export { Header,
          Footer,
          Container,
@@ -20,6 +21,7 @@ export { Header,
          Post,
          PostFrom,
          PostCard,
+         AuthLayout,
 
          
 };
