@@ -4,7 +4,7 @@ import Logo from '../Logo'
 
 function Footer() {
   return (
-    <section className="relative py-10 overflow-hidden bg-gray-400 border border-t-2 border-t-black">
+    <section className="relative overflow-hidden bg-white py-60">
             <div className="relative z-10 px-4 mx-auto max-w-7xl">
                 <div className="flex flex-wrap -m-6">
                     <div className="w-full p-6 md:w-1/2 lg:w-5/12">
@@ -14,7 +14,7 @@ function Footer() {
                             </div>
                             <div>
                                 <p className="text-sm text-gray-600">
-                                    &copy; Copyright 2023. All Rights Reserved by DevUI.
+                                    &copy; maxdev
                                 </p>
                             </div>
                         </div>
